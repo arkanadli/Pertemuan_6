@@ -20,7 +20,7 @@ jobs:
 
       - name: Deploy to EC2
         run: |
-          ssh -o StrictHostKeyChecking=no root@3.107.234.96 << 'EOF'
+          ssh -o StrictHostKeyChecking=no  ec2-user@3.107.234.96 << 'EOF'
           cd /usr/share/nginx/html
           git pull origin main
           sudo systemctl restart nginx
