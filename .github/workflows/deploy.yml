@@ -23,6 +23,6 @@ jobs:
           ssh -o StrictHostKeyChecking=no ec2-user@3.107.234.96 "
             cd /usr/share/nginx/html/Pertemuan_6 &&
             git config --global --add safe.directory /usr/share/nginx/html/Pertemuan_6 &&
-            git pull origin main &&
+            sudo git pull origin main &&
             sudo systemctl restart nginx
           "
