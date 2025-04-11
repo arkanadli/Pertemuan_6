@@ -20,10 +20,8 @@ jobs:
 
       - name: Deploy to EC2
         run: |
-          ssh -o StrictHostKeyChecking=no  ec2-user@3.107.234.96 << 'EOF'
-          cd /usr/share/nginx/html
-          git pull origin main
-          sudo systemctl restart nginx
-          EOF
-        env: 
-        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          ssh -o StrictHostKeyChecking=no ec2-user@3.107.234.96 "
+            cd /usr/share/nginx/html &&
+            git pull origin main &&
+            sudo systemctl restart nginx
+          "
