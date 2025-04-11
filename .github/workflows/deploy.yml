@@ -25,3 +25,5 @@ jobs:
           git pull origin main
           sudo systemctl restart nginx
           EOF
+        env: 
+        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
